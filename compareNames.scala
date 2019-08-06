@@ -1,4 +1,4 @@
-object compareNames {
+object Main {
    def main(args: Array[String]) {
       val name = "Snow John"
       val secondName = "John Snow W."
@@ -7,15 +7,16 @@ object compareNames {
    
    def parseMiddleName(name :String, secondName :String): Boolean={
        if (name.equals("") || name.equals(null) || secondName.equals("") || secondName.equals(null)) return false;
-       if(parseShortCutName(name)==parseShortCutName(secondName)){return true;}
+       val name1 = parseShortCutName(name)
+       val secondName1 = parseShortCutName(secondName)
+       if(name1.equals(secondName1)){return true;}
        else{
-           if(stringSort(parseShortCutName(name)).equals(stringSort(parseShortCutName(secondName)))){return true;}
+           if(stringSort(name1).equals(stringSort(secondName1))){return true;}
            return false;
         }
    }
    
    def parseShortCutName(name :String): String={
-       if(name.equals("") || name.equals(null)) return ""
        return name.replaceAll("(.[.])", "").replaceAll("\\s\\s"," ").trim()
    }
    
