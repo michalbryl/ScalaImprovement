@@ -1,12 +1,12 @@
 object Main {
    def main(args: Array[String]) {
-      val name = "Snow John"
-      val secondName = "John Snow W."
+      val name = "Jan Wojciechowski"
+      val secondName = "Wojciechowski Jan"
       println(parseMiddleName(name, secondName))
    }
    
    def parseMiddleName(name :String, secondName :String): Boolean={
-       if (name.equals("") || name.equals(null) || secondName.equals("") || secondName.equals(null)) return false;
+       if (name == null || name.equals("") || secondName.equals("") || secondName == null) return false;
        val name1 = parseShortCutName(name)
        val secondName1 = parseShortCutName(secondName)
        if(name1.equals(secondName1)){return true;}
